@@ -1,0 +1,81 @@
+.menu-container {
+  background: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-card {
+  background: #1e2633;
+  padding: 30px;
+  border-radius: 15px;
+  width: 320px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.menu-btn {
+  display: block;
+  margin: 10px 0;
+  padding: 12px;
+  text-align: center;
+  background: #2b3442;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.menu-btn:hover {
+  background: #3b4557;
+  transform: translateX(5px);
+}
+
+.btn-close {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-close:hover {
+  background: #b94643;
+}
+
+.menu-card button.menu-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  background: #2b3442;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.menu-card button.menu-btn:hover {
+  background: #3b4557;
+  transform: translateX(5px);
+}

@@ -1,0 +1,30 @@
+.home-container {
+  background: linear-gradient(135deg, #0d1117, #161b22);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.logo {
+  font-size: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.btn-primary {
+  padding: 12px 25px;
+  background: #4c8bf5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.25s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  background: #3873d2;
+}

@@ -1,0 +1,159 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* ✅ Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+
+/* ✅ Contenedor general */
+h1,
+h2,
+h3 {
+  text-align: center;
+  color: #333;
+}
+
+/* ✅ Formulario general */
+form {
+  background: white;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form textarea,
+form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+form button {
+  background: #4c8bf5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #3873d2;
+}
+
+/* ✅ GRID de juegos */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+/* ✅ Tarjeta de juego */
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ✅ Botones en tarjetas */
+.card button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  background: #555;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: #333;
+}
+
+/* ✅ Lista de reseñas */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta-juego {
+  transition: 0.25s;
+}
+
+.tarjeta-juego:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.juego-img {
+  border-radius: 10px;
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.btn-accion {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #2b3442;
+  color: white;
+  transition: 0.2s;
+}
+
+.btn-accion:hover {
+  background: #3b4557;
+  transform: scale(1.03);
+}
+
+.eliminar {
+  background: #b93838;
+}
+
+.eliminar:hover {
+  background: #a23030;
+}
+
+.reseñas {
+  background: #4c8bf5;
+}
+
+.reseñas:hover {
+  background: #3a73d8;
+}
