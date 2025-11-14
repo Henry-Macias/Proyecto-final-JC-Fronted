@@ -1,4 +1,17 @@
-const API_URL = "http://localhost:5000/api/reseñas";
+const API_URL = "http://localhost:5000/api/reviews";
+
+export const deleteReview = async (id) => {
+  try {
+    const response = await fetch(`${API_URL}/${id}`, {
+      method: "DELETE",
+    });
+    if (!response.ok) throw new Error("Error al eliminar la reseña");
+    return await response.json();
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
 
 export const getReviews = async () => {
   try {

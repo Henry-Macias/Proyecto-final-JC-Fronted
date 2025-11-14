@@ -8,7 +8,7 @@ function Home() {
     <div className="home-wrapper">
       <div className="home-container">
 
-        {/* 🔥 HEADER CON MARCO NEÓN (DEFINIDO EN TU CSS) */}
+        {/* 🔥 HEADER CON MARCO NEÓN */}
         <div className="header-box">
           <h1>GameTracker</h1>
         </div>
@@ -23,10 +23,18 @@ function Home() {
             <button className="cta-button" onClick={() => navigate("/games")}>
               Explorar Juegos
             </button>
+
+            {/* ⭐ BOTÓN NUEVO PARA IR A RESEÑAS */}
+            <button
+              className="btn-reviews"
+              onClick={() => navigate("/reviews")}
+            >
+              ⭐ Ver Reseñas
+            </button>
           </div>
+
           <section className="add-section">
             <div className="add-actions">
-
               <button
                 className="btn-add-game"
                 onClick={() => navigate("/games/add")}
@@ -36,8 +44,7 @@ function Home() {
             </div>
           </section>
 
-          <div className="hero-image">
-          </div>
+          <div className="hero-image"></div>
         </section>
 
         <section className="features">

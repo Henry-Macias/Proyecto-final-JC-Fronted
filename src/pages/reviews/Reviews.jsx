@@ -1,18 +1,31 @@
 import { useEffect, useState } from "react";
-import { getReviews } from "../../services/reviewService";
+import { getReviews, deleteReview } from "../../services/reviewService";
 import ReviewCard from "../../components/reviewcard/ReviewCard";
 import "./Reviews.css";
+
 function Reviews() {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    const fetchReviews = async () => {
-      const data = await getReviews();
-      console.log(data);
-      setReviews(data);
-    };
     fetchReviews();
   }, []);
+
+  const fetchReviews = async () => {
+    const data = await getReviews();
+    setReviews(data);
+  };
+
+  const handleDelete = async (id) => {
+    if (window.confirm("¿Seguro quieres eliminar esta reseña?")) {
+      try {
+        await deleteReview(id);
+        setReviews(reviews.filter((r) => r._id !== id));
+      } catch (error) {
+        console.error("Error al eliminar reseña:", error);
+        alert("No se pudo eliminar la reseña");
+      }
+    }
+  };
 
   return (
     <div>
@@ -22,7 +35,11 @@ function Reviews() {
       ) : (
         <div className="reviews-grid">
           {reviews.map((review) => (
-            <ReviewCard key={review._id} review={review} />
+            <ReviewCard
+              key={review._id}
+              review={review}
+              onDelete={handleDelete}
+            />
           ))}
         </div>
       )}

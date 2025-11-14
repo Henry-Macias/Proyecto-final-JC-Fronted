@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createReview } from "../../services/reviewService";
 import "./AddReview.css";
+
 function AddReview() {
   const [formData, setFormData] = useState({
     juegoId: "",
@@ -11,6 +12,17 @@ function AddReview() {
     recomendaria: false,
   });
 
+  const [juegos, setJuegos] = useState([]);
+
+  // 🔹 Cargar lista de juegos del backend
+  useEffect(() => {
+    fetch("http://localhost:5000/api/juegos")
+      .then((resp) => resp.json())
+      .then((data) => setJuegos(data))
+      .catch((err) => console.error("Error cargando juegos", err));
+  }, []);
+
+  // 🔹 Manejo del formulario
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -19,11 +31,14 @@ function AddReview() {
     });
   };
 
+  // 🔹 Enviar reseña
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await createReview(formData);
       alert("Reseña agregada exitosamente!");
+
+      // Resetear formulario
       setFormData({
         juegoId: "",
         puntuacion: 3,
@@ -41,15 +56,27 @@ function AddReview() {
   return (
     <div>
       <h2>Agregar nueva reseña</h2>
+
       <form onSubmit={handleSubmit} className="form">
-        <input
-          type="text"
+
+        {/* 🔹 Seleccionar juego */}
+        <label>Juego:</label>
+        <select
           name="juegoId"
-          placeholder="ID del Juego"
           value={formData.juegoId}
           onChange={handleChange}
           required
-        />
+        >
+          <option value="">Selecciona un juego</option>
+
+          {juegos.map((j) => (
+            <option key={j._id} value={j._id}>
+              {j.titulo}
+            </option>
+          ))}
+        </select>
+
+        {/* Puntuación */}
         <label>
           Puntuación (1-5):
           <input
@@ -62,12 +89,16 @@ function AddReview() {
             required
           />
         </label>
+
+        {/* Reseña */}
         <textarea
           name="textoReseña"
           placeholder="Escribe tu reseña..."
           value={formData.textoReseña}
           onChange={handleChange}
         />
+
+        {/* Horas jugadas */}
         <input
           type="number"
           name="horasJugadas"
@@ -75,6 +106,8 @@ function AddReview() {
           value={formData.horasJugadas}
           onChange={handleChange}
         />
+
+        {/* Dificultad */}
         <select
           name="dificultad"
           value={formData.dificultad}
@@ -84,6 +117,8 @@ function AddReview() {
           <option value="Normal">Normal</option>
           <option value="Difícil">Difícil</option>
         </select>
+
+        {/* Checkbox recomendación */}
         <label>
           <input
             type="checkbox"
@@ -93,6 +128,7 @@ function AddReview() {
           />
           ¿Lo recomendarías?
         </label>
+
         <button type="submit">Guardar reseña</button>
       </form>
     </div>

@@ -436,3 +436,20 @@
   transform: scale(1.06);
   opacity: 0.9;
 }
+
+.btn-reviews {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #ffca28;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.btn-reviews:hover {
+  background-color: #ffd95b;
+  transform: scale(1.05);
+}

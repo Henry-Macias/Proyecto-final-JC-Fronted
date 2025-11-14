@@ -1,9 +1,9 @@
 import "./ReviewCard.css";
 
-function ReviewCard({ review }) {
+function ReviewCard({ review, onDelete }) {
   return (
     <div className="review-card">
-      <h3>Juego ID: {review.juegoId._id}</h3>
+      <h3>Juego: {review.juegoId.titulo}</h3>
       <p>⭐ {review.puntuacion} / 5</p>
       <p>
         <strong>Dificultad:</strong> {review.dificultad}
@@ -15,6 +15,10 @@ function ReviewCard({ review }) {
       <small>
         {review.recomendaria ? "✅ Lo recomendaría" : "❌ No lo recomendaría"}
       </small>
+
+      <button onClick={() => onDelete(review._id)} className="delete-btn">
+        Eliminar
+      </button>
     </div>
   );
 }
