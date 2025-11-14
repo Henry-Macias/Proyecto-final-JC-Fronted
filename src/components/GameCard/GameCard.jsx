@@ -1,38 +1,50 @@
 import "./GameCard.css";
 
-function GameCard({ game }) {
+function GameCard({ juegos, onDelete }) {
   return (
     <div className="game-card">
       <div
         className="game-cover-bg"
         style={{
-          backgroundImage: `url(${game.imagenPortada ||
+          backgroundImage: `url(${juegos.imagenPortada ||
             "https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
             })`,
         }}
         role="img"
-        aria-label={game.titulo}
+        aria-label={juegos.titulo}
       />
+
       <div className="game-details">
-        <h3>{game.titulo}</h3>
-        <p className="genre">{game.genero}</p>
+        <h3>{juegos.titulo}</h3>
+        <p className="genre">{juegos.genero}</p>
+
         <p>
-          <strong>Plataforma:</strong> {game.plataforma}
+          <strong>Plataforma:</strong> {juegos.plataforma}
         </p>
         <p>
-          <strong>Año:</strong> {game.añoLanzamiento}
+          <strong>Año:</strong> {juegos.añoLanzamiento}
         </p>
         <p>
-          <strong>Desarrollador:</strong> {game.desarrollador}
+          <strong>Desarrollador:</strong> {juegos.desarrollador}
         </p>
-        <p className="description">{game.descripcion}</p>
+
+        <p className="description">{juegos.descripcion}</p>
+
         <div className="status">
-          {game.completado ? (
+          {juegos.completado ? (
             <span className="badge completed">✅ Completado</span>
           ) : (
             <span className="badge pending">🎯 Pendiente</span>
           )}
         </div>
+
+        {/* 🔥 Botón eliminar */}
+        <button
+          className="btn-delete"
+          onClick={() => onDelete(juegos._id)}
+        >
+          🗑️ Eliminar
+        </button>
       </div>
     </div>
   );

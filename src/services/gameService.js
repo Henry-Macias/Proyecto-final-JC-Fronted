@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/games";
+const API_URL = "http://localhost:5000/api/juegos";
 
 export const getGames = async () => {
   try {

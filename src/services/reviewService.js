@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/reviews";
+const API_URL = "http://localhost:5000/api/reseñas";
 
 export const getReviews = async () => {
   try {

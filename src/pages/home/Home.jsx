@@ -8,6 +8,11 @@ function Home() {
     <div className="home-wrapper">
       <div className="home-container">
 
+        {/* 🔥 HEADER CON MARCO NEÓN (DEFINIDO EN TU CSS) */}
+        <div className="header-box">
+          <h1>GameTracker</h1>
+        </div>
+
         <section className="hero-section">
           <div className="hero-text">
             <p>
@@ -19,12 +24,19 @@ function Home() {
               Explorar Juegos
             </button>
           </div>
+          <section className="add-section">
+            <div className="add-actions">
+
+              <button
+                className="btn-add-game"
+                onClick={() => navigate("/games/add")}
+              >
+                + Agregar Juego
+              </button>
+            </div>
+          </section>
 
           <div className="hero-image">
-            <img
-              src="https://cdn.pixabay.com/photo/2017/01/31/13/14/controller-2029396_1280.png"
-              alt="Game Controller"
-            />
           </div>
         </section>
 
@@ -32,7 +44,6 @@ function Home() {
           <h2>¿Qué puedes hacer con GameTracker?</h2>
 
           <div className="features-grid">
-
             <div
               className="feature-card"
               onClick={() => navigate("/games")}
@@ -62,7 +73,6 @@ function Home() {
               <h3>Descubre nuevos títulos</h3>
               <p>Explora recomendaciones según tus gustos.</p>
             </div>
-
           </div>
         </section>
 

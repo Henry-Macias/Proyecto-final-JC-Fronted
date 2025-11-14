@@ -1,17 +1,63 @@
-.home-container {
-  padding: 2rem;
-  font-family: "Poppins", sans-serif;
-  color: #fff;
+/* 🚀 CONTENEDOR PRINCIPAL */
+.home-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Tu marco neón original */
+  border: 4px solid rgba(0, 255, 255, 0.6);
+  border-radius: 32px;
+
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6),
+    0 0 40px rgba(0, 255, 255, 0.4);
+
+  animation: glowFrame 4s ease-in-out infinite alternate;
+
+  background: radial-gradient(circle at center,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.9));
+}
+
+@keyframes glowFrame {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  }
+
+  100% {
+    box-shadow: 0 0 40px rgba(0, 255, 255, 1);
+  }
+}
+
+/* 🌟 CONTENEDOR INTERNO */
+.home-container {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100vh;
+  padding: 2rem;
+
+  /* Tu fondo original */
   background-image: url("/src/assets/fondo.webp");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 
-  min-height: 100vh;
+  /* Nuevo estilo mejorado */
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px) brightness(0.9);
+
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 0 18px rgba(0, 255, 255, 0.25);
+
   animation: fadeIn 1s ease-in-out;
 }
 
-/* 🎇 ANIMACIÓN DE ENTRADA */
+/* ANIMACIÓN */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -21,6 +67,104 @@
     opacity: 1;
   }
 }
+
+/* 🔥 HERO SECTION */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+
+  background: rgba(0, 0, 0, 0.45);
+  padding: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #e8e8e8;
+}
+
+.cta-button {
+  background: linear-gradient(90deg, #007bff, #7f00ff);
+  border: none;
+  padding: 0.9rem 1.7rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  transform: scale(1.06);
+  opacity: 0.9;
+}
+
+.hero-image img {
+  width: 300px;
+  max-width: 100%;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.5));
+}
+
+/* ⭐ FEATURES */
+.features {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.features h2 {
+  font-size: 2.3rem;
+  margin-bottom: 2rem;
+  color: #00eaff;
+  text-shadow: 0 0 8px #00eaff;
+}
+
+/* 🟣 TARJETAS */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 18px;
+  padding: 1.8rem;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.25);
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 18px rgba(0, 255, 255, 0.45);
+}
+
+.feature-card img {
+  width: 70px;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.4));
+}
+
+.feature-card h3 {
+  color: #00ffbf;
+  margin-bottom: 0.6rem;
+  font-size: 1.3rem;
+}
+
+.feature-card p {
+  color: #dcdcdc;
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
 
 /* ⭐ HEADER CON MARCO NEÓN REDONDEADO */
 .header-box {
@@ -250,4 +394,45 @@
   padding: 2rem;
 
   backdrop-filter: brightness(0.8);
+}
+
+.add-section {
+  margin: 2rem 0;
+}
+
+.add-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.45);
+  padding: 1.5rem 2rem;
+  border-radius: 18px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.25);
+}
+
+.add-actions h2 {
+  color: #00eaff;
+  font-size: 1.8rem;
+  text-shadow: 0 0 8px #00eaff;
+}
+
+/* Botón agregar */
+.btn-add-game {
+  background: linear-gradient(90deg, #00ffbf, #0099ff);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn-add-game:hover {
+  transform: scale(1.06);
+  opacity: 0.9;
 }
