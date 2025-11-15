@@ -5,7 +5,7 @@ import Footer from "./components/Footer/Footer.jsx";
 import Home from "./pages/home/Home.jsx";
 import Games from "./pages/Games/Games.jsx";
 import AddGame from "./pages/AddGame/AddGame.jsx";
-import Reviews from "./pages/Reviews/Reviews.jsx";
+import Reviews from "./pages/reviews/Reviews.jsx";
 import AddReview from "./pages/addreview/AddReview.jsx";
 import "./App.css";
 

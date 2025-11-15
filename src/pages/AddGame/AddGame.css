@@ -107,3 +107,18 @@ form.form button:hover {
   font-size: 0.8rem;
   color: var(--accent-color);
 }
+
+.nav-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #00d4ff;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nav-btn:hover {
+  background-color: #00b8e0;
+}

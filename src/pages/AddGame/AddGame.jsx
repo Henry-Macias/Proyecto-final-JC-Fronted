@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { createGame } from "../../services/gameService";
 import "./AddGame.css";
 
 function AddGame() {
   const API_URL = "http://localhost:5000/api/juegos";
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     titulo: "",
@@ -25,35 +27,14 @@ function AddGame() {
   };
 
   const handleSubmit = async (e) => {
-
     e.preventDefault();
     try {
-
-
-      fetch(API_URL, {
+      await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log("Success:", data);
-          alert("Videojuego agregado exitosamente!");
-          setFormData({
-            titulo: "",
-            genero: "",
-            plataforma: "",
-            añoLanzamiento: "",
-            desarrollador: "",
-            imagenPortada: "",
-            descripcion: "",
-            completado: false,
-          });
-        });
+      });
 
-      /*
-// Usando el servicio createGame
-      await createGame(formData);
       alert("Videojuego agregado exitosamente!");
       setFormData({
         titulo: "",
@@ -65,18 +46,34 @@ function AddGame() {
         descripcion: "",
         completado: false,
       });
-    
- */
     } catch (error) {
       console.error("Error al guardar el videojuego:", error);
       alert("Error al guardar el videojuego");
     }
   };
 
-
   return (
     <div>
+
+      {/* 🔙 BOTONES DE NAVEGACIÓN */}
+      <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
+        <button
+          onClick={() => navigate("/")}
+          className="nav-btn"
+        >
+          ⬅ Volver al inicio
+        </button>
+
+        <button
+          onClick={() => navigate("/games")}
+          className="nav-btn"
+        >
+          🎮 Volver a Juegos
+        </button>
+      </div>
+
       <h2>Agregar nuevo videojuego</h2>
+
       <form onSubmit={handleSubmit} className="form">
         <div className="form-group">
           <input

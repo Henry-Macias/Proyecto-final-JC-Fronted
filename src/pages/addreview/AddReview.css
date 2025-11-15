@@ -9,3 +9,35 @@ select {
   font-size: 1rem;
   transition: border-color 0.2s ease;
 }
+
+.back-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.back-btn:hover {
+  background-color: #2980b9;
+}
+
+.back-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #00d4ff;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background-color: #00b8e0;
+}

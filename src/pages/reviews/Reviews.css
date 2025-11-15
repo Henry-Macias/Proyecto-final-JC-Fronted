@@ -16,3 +16,42 @@ h2 {
   color: var(--text-muted);
   margin-top: 20px;
 }
+
+.back-home-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.back-home-btn:hover {
+  background-color: #2980b9;
+}
+
+.add-review-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background-color: #2ecc71;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.add-review-btn:hover {
+  background-color: #27ae60;
+}
+
+.reviews-page {
+  background-image: url('/src/assets/fondo.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: 20px;
+}

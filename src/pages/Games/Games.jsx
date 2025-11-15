@@ -36,22 +36,42 @@ function Games() {
 
   return (
     <div>
-      {/* 🔙 BOTÓN PARA VOLVER */}
-      <button
-        onClick={() => navigate("/")}
-        style={{
-          padding: "0.6rem 1.2rem",
-          backgroundColor: "#00d4ff",
-          border: "none",
-          color: "#000",
-          fontWeight: "bold",
-          borderRadius: "8px",
-          cursor: "pointer",
-          marginBottom: "1rem"
-        }}
-      >
-        ⬅ Volver al inicio
-      </button>
+      {/* 🔘 BOTONES DE NAVEGACIÓN */}
+      <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
+
+        {/* 🔙 Volver */}
+        <button
+          onClick={() => navigate("/")}
+          style={{
+            padding: "0.6rem 1.2rem",
+            backgroundColor: "#00d4ff",
+            border: "none",
+            color: "#000",
+            fontWeight: "bold",
+            borderRadius: "8px",
+            cursor: "pointer"
+          }}
+        >
+          ⬅ Volver al inicio
+        </button>
+
+        {/* ➕ Agregar juego */}
+        <button
+          onClick={() => navigate("/games/add")}
+          style={{
+            padding: "0.6rem 1.2rem",
+            backgroundColor: "#00ff8c",
+            border: "none",
+            color: "#000",
+            fontWeight: "bold",
+            borderRadius: "8px",
+            cursor: "pointer"
+          }}
+        >
+          ➕ Agregar Juego
+        </button>
+
+      </div>
 
       <h2>🎮 Lista de Videojuegos</h2>
 
