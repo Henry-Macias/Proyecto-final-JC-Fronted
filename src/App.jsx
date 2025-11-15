@@ -1,7 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import Navbar from "./components/Navbar/Navbar.jsx";
-import Footer from "./components/Footer/Footer.jsx";
 import Home from "./pages/home/Home.jsx";
 import Games from "./pages/Games/Games.jsx";
 import AddGame from "./pages/AddGame/AddGame.jsx";
